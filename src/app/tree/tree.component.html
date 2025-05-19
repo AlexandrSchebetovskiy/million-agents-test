@@ -1,0 +1,11 @@
+<ul class="tree-container">
+  <li *ngFor="let node of treeNodes" class="tree-node" [ngClass]="{'deleted': node.is_deleted}">
+    <span class="node-label" (click)="toggleNode(node)">
+    <i *ngIf="node.children && node.children.length > 0" [class.arrow-down]="!node.isExpanded" [class.arrow-up]="node.isExpanded" class="arrow"></i>
+          <b>{{node.id}}</b> - {{ node.title }}
+    </span>
+    <ul *ngIf="node.isExpanded && node.children.length > 0" class="tree-child">
+      <tree-node [treeNodes]="node.children" (nodeClick)="onNodeClick($event)" [isChild]="true"></tree-node>
+    </ul>
+  </li>
+</ul>

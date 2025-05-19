@@ -1,0 +1,53 @@
+.tree-container {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+
+}
+.tree-node {
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.tree-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 2px;
+  height: 100%;
+  border-left: 2px dashed #ddd;
+}
+
+
+.tree-child {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 10px;
+}
+.node-label {
+  cursor: pointer;
+  background-color: lightblue;
+  border-radius: 15px;
+  padding: 5px 20px;
+}
+
+.arrow {
+  margin-right: 10px;
+}
+
+.arrow-down::before {
+  content: '▼';
+}
+
+.arrow-up::before {
+  content: '▲';
+}
+
+.deleted {
+  color: gray;
+  text-decoration: line-through;
+}
+.deleted > .node-label {
+  background-color: #ccc;
+}
